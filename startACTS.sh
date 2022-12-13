@@ -21,16 +21,16 @@ cd $RUNDIR
 source $ACTSBUILD/python/setup.sh
 
 # Install the required python modules
-#pip3 install -r $ACTSSOURCE/Examples/Python/tests/requirements.txt
+pip3 install -r $ACTSSOURCE/Examples/Python/tests/requirements.txt
 
 # Get my jupyter notebook ingredients
-#pip3 install jupyter notebook pandas numpy matplotlib
+pip3 install jupyter notebook pandas numpy matplotlib
 
 # Run the python unit tests
 # REF: https://acts.readthedocs.io/en/latest/examples/python_bindings.html#python-based-unit-tests
 echo "Running python bindings tests..."
 cd $ACTSSOURCE/Examples/Python/tests/
-#pytest
+pytest
 echo "Hopefully lots of passed tests..."
 cd $RUNDIR
 
