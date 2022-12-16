@@ -24,8 +24,8 @@ echo "Setting up DD4hep"
 source /usr/local/bin/thisdd4hep_only.sh
 
 # Source the GEANT4 installation
-echo "Setting up GEANT (NB - current build is without Geant)"
-source /usr/local/bin/geant4.sh
+#echo "Setting up GEANT (NB - current build is without Geant)"
+#source /usr/local/bin/geant4.sh
 
 # Set up the python bindings
 # REF: https://acts.readthedocs.io/en/latest/examples/python_bindings.html
@@ -37,7 +37,7 @@ source $ACTSBUILD/python/setup.sh
 
 # Set up ODD detector
 echo "Setting up ODD"
-export LD_LIBRARY_PATH=$ACTSBUILD/build/thirdparty/OpenDataDetector/factory:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$ACTSBUILD/thirdparty/OpenDataDetector/factory:$LD_LIBRARY_PATH
 
 # Install the required python modules
 #pip3 install -r $ACTSSOURCE/Examples/Python/tests/requirements.txt
