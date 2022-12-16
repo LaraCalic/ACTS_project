@@ -16,9 +16,28 @@ echo "Environment variables set: ACTSBUILD, ACTSSOURCE, ACTSPYSCRIPTS"
 #curl -O https://gitlab.cern.ch/acts/OpenDataDetector/-/raw/main/data/odd-bfield.root
 #cd $RUNDIR
 
+# Download Geant4 data
+#source /usr/local/bin/download_geant4_data.sh
+
+#  Source the DD4HEP installation
+echo "Setting up DD4hep"
+source /usr/local/bin/thisdd4hep_only.sh
+
+# Source the GEANT4 installation
+echo "Setting up GEANT (NB - current build is without Geant)"
+source /usr/local/bin/geant4.sh
+
 # Set up the python bindings
 # REF: https://acts.readthedocs.io/en/latest/examples/python_bindings.html
+echo "Setting up Python bindings"
 source $ACTSBUILD/python/setup.sh
+
+# Source the ACTS installation
+#source $ACTSBUILD/this_acts.sh
+
+# Set up ODD detector
+echo "Setting up ODD"
+export LD_LIBRARY_PATH=$ACTSBUILD/build/thirdparty/OpenDataDetector/factory:$LD_LIBRARY_PATH
 
 # Install the required python modules
 #pip3 install -r $ACTSSOURCE/Examples/Python/tests/requirements.txt
