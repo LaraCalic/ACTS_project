@@ -13,6 +13,10 @@ Help()
    echo "h     Print this Help."
    echo "p     Install python modules for ACTS and Jupyter notebooks."
    echo "t     Run pytest."
+   echo ""
+   echo "You may relaunch the docker container with:"
+   echo "docker container start --interactive {container name}"
+   echo "Container name is ExACTSBox if you created the container with dockACTS.sh"
    echo
 }
 
